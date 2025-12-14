@@ -114,6 +114,33 @@
 </div> 
  <button class="cart-btn"><i class="fas fa-shopping-cart"></i></button>
     </div>
+    <!-- JavaScript -->
+<script>
+  // ننتظر تحميل الصفحة
+document.addEventListener('DOMContentLoaded', function() {
+  const productCards = document.querySelectorAll('.product-card');
+
+  productCards.forEach(card => {
+    const minusBtn = card.querySelector('.minus');
+    const plusBtn = card.querySelector('.plus');
+    const qtyInput = card.querySelector('.qty');
+
+    minusBtn.addEventListener('click', () => {
+      let currentValue = parseInt(qtyInput.value);
+      if (currentValue > 1) {
+        qtyInput.value = currentValue - 1;
+      }
+    });
+
+    plusBtn.addEventListener('click', () => {
+      let currentValue = parseInt(qtyInput.value);
+      qtyInput.value = currentValue + 1;
+    });
+  });
+  });
+</script>
+</body>
+</html>
 
 
 
@@ -124,6 +151,7 @@
 
 
   
+
 
 
 
